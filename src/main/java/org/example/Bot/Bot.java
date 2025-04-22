@@ -20,7 +20,7 @@ public Bot(){
      System.out.println( token);
 
      DefaultShardManagerBuilder manager = DefaultShardManagerBuilder.createDefault(token);
-     manager.setActivity(Activity.customStatus("Perfezionando il codice, evolvendo la mente..."));
+     manager.setActivity(Activity.customStatus("..."));
      manager.setAutoReconnect(true);
      manager.setStatus(OnlineStatus.ONLINE);
      manager.addEventListeners(new AddCommandToGuild());  // add all The Liatener like new AutoroleAssigner()
