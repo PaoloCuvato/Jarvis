@@ -1,7 +1,7 @@
 package org.example.Bot;
 
-import Command.AddCommandToGuild;
-import Config.Config;
+import org.example.Command.AddCommandToGuild;
+import org.example.Config.Config;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -14,6 +14,7 @@ import java.util.EnumSet;
 
 public class Bot extends ListenerAdapter {
 public Bot(){
+
      // Get The Token from Properties File
      Config config = new Config();
      String token = config.getToken();

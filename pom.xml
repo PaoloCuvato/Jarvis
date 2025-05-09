@@ -31,7 +31,7 @@
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>5.0.0-beta.20</version>
+            <version>5.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -45,10 +45,18 @@
             <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Dipendenza per JavaFX (se desideri usare JavaFX per altre componenti grafiche) -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.2.1</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17.0.2</version>
+        </dependency>
+
+        <!-- Dipendenza per librerie di gestione delle immagini, come per esempio Apache Commons Imaging -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-imaging</artifactId>
+            <version>1.0-alpha3</version>
         </dependency>
     </dependencies>
 </project>

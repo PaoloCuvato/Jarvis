@@ -1,4 +1,4 @@
-package Command;
+package org.example.Command;
 
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.session.ReadyEvent;

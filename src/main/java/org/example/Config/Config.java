@@ -1,4 +1,4 @@
-package Config;
+package org.example.Config;
 
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
