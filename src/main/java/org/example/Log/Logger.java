@@ -133,18 +133,20 @@ public class Logger extends ListenerAdapter {
     @Override
     public void onUserUpdateAvatar(@NotNull UserUpdateAvatarEvent event) {
         User user = event.getUser();
-        String previousAvatarUrl = event.getOldAvatarUrl();  // L'avatar precedente
         String newAvatarUrl = event.getNewAvatarUrl();       // Il nuovo avatar
+        String timeFormatted = OffsetDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy"));
 
-        // Crea l'Embed
         EmbedBuilder embed = new EmbedBuilder();
-        embed.setTitle("** " + user.getEffectiveName() + " ** has updated their avatar!") // Titolo senza trattini o separatori
-                .setColor(Color.decode("#ff6347")) // Un colore carino per l'embed
-                .addField("> **User Tag:**",user.getAsTag(), true)  // User tag nel formato "box"
-                .addField("> **Previous Avatar:**", "[Click Here]( " + previousAvatarUrl + " )", true)
-                .addField("> **New Avatar:**", "[Click Here]( " + newAvatarUrl + " )", true)
-                .setImage(newAvatarUrl)  // Imposta il nuovo avatar come immagine nell'embed
-                .setFooter("Avatar updated at " + OffsetDateTime.now().format(DateTimeFormatter.ofPattern("dd:MM:yyyy HH:mm:ss")), event.getJDA().getSelfUser().getAvatarUrl());  // Icona del bot nel footer
+        embed.setTitle("▬▬ User Avatar Updated ▬▬")
+                .setColor(Color.decode("#ff6347"))
+                .setDescription(
+                        "**" + user.getAsMention() + "** has updated his avatar!\n\n" +
+                                "> **Time:** `" + timeFormatted + "`\n" +
+                                "> **User ID:** `" + event.getUser().getId() + "`"
+                )
+                .setImage(newAvatarUrl)
+                .setFooter("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+
 
         // Ottieni il canale tramite l'ID (sostituisci con l'ID del canale desiderato)
         TextChannel logChannel = event.getJDA().getTextChannelById(1370349729182908566L);
